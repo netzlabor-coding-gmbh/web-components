@@ -44,7 +44,7 @@ class Popup extends HTMLElement {
                 top: 50%;
                 text-align: center;
                 max-width: 550px;
-                padding: 30px 25px;
+                padding: 40px 25px 30px 25px;
                 background: #efefef;
                 border-bottom: 1px solid #b4b4b4;
                 box-shadow: 0 0 20px 0 rgba(0,0,0,.4);
