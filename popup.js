@@ -48,6 +48,7 @@ class Popup extends HTMLElement {
                 background: #efefef;
                 border-bottom: 1px solid #b4b4b4;
                 box-shadow: 0 0 20px 0 rgba(0,0,0,.4);
+                z-index: 999;
             }
             :host .overlay {
                 display: block;
@@ -59,14 +60,15 @@ class Popup extends HTMLElement {
                 left: 0px;
                 justify-content: center;
                 align-items: center;
+                z-index: 998;
             }
             :host .button-close {
                 position: absolute;
-                width: 17px;
-                height: 17px;
-                right: 10px;
-                top: 10px;
-                font-size: 11px;
+                width: 26px;
+                height: 26px;
+                right: 9px;
+                top: 9px;
+                font-size: 16px;
                 font-family: unset;
                 font-weight: 300;
                 cursor: pointer;
@@ -78,6 +80,10 @@ class Popup extends HTMLElement {
                 background: rgba(255,255,255,.4);
                 border: 1px solid #666977;
                 border-radius: 50%;
+            }
+
+            :host .body-blocked {
+                overflow: hidden!important;
             }
         `;
 
@@ -91,7 +97,8 @@ class Popup extends HTMLElement {
         // Show popup first time
         setTimeout(() => {
             this.style = 'display: block';
-        }, 30000);
+            document.body.style = 'overflow: hidden';
+        }, 3000);
         
     }
 
@@ -104,6 +111,7 @@ class Popup extends HTMLElement {
     close() {
        this.style = 'display: none';
        localStorage.setItem("closed", 1);
+       document.body.style = 'overflow: visible';
     }
 
 
