@@ -50,6 +50,14 @@ class Popup extends HTMLElement {
                 box-shadow: 0 0 20px 0 rgba(0,0,0,.4);
                 z-index: 999;
             }
+            @media screen and (max-width: 768px) {
+                :host .wrapper {
+                    transform: translate(-0%,-50%);
+                    left: 0%;
+                    margin: 0px 20px;
+                    max-width: 100%;
+                }
+            }
             :host .overlay {
                 display: block;
                 background-color: rgba(0,0,0,.3);
